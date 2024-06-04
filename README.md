@@ -6,7 +6,7 @@
 
 ## Overview
 
-It is a RESTful API for a Ecommerce of Tesla products.
+It is a REST API for a Ecommerce of products.
 
 ## Getting Started
 
