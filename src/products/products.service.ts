@@ -37,16 +37,17 @@ export class ProductsService {
     })
   }
 
-  findOne(term: string) {
-    return `This action returns a #${term} product`;
+  async findOne(term: string) {
+    return await this.productRepository.findOneBy({ id: term });
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
     return `This action updates a #${id} product`;
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} product`;
+  async remove(id: string) {
+    const product = await this.findOne( id );
+    await this.productRepository.remove( product );
   }
 
   private handleDBExceptions( error: any ) {
